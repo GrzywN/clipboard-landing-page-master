@@ -1,3 +1,35 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the button component.
-// -----------------------------------------------------------------------------
+.button {
+  padding-top: 0.8125rem;
+  padding-bottom: 0.8125rem;
+
+  width: min(100vw - 4rem, 19.4375rem);
+  height: 3.5rem;
+  border-radius: 3.5rem;
+
+  display: grid;
+  place-items: center;
+
+  border-bottom: 0.1875rem solid;
+
+  transition: 200ms ease;
+  transition-property: border-bottom-width, transform;
+
+  &:active {
+    border-bottom-width: 0;
+    transform: translateY(0.125rem);
+  }
+
+  &--ios {
+    background-color: $color-strong-cyan;
+    border-bottom-color: $color-strong-cyan-darker;
+  }
+
+  &--mac {
+    background-color: $color-light-blue;
+    border-bottom-color: $color-light-blue-darker;
+  }
+
+  @include media('>=medium') {
+    width: 14.1875rem;
+  }
+}

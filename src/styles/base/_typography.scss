@@ -1,7 +1,49 @@
-/**
- * Basic typography style for copy text
- */
-body {
-  color: $text-color;
-  font: normal 125% / 1.4 $text-font-stack;
+html {
+  font-family: $font-sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.52px;
+  text-align: center;
+
+  @include media('>=large') {
+    font-size: 2.875rem;
+    letter-spacing: -0.75px;
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.625rem;
+  letter-spacing: 0.12px;
+
+  text-align: center;
+
+  &.align-left {
+    text-align: left;
+  }
+
+  @include media('>=large') {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    letter-spacing: 0.15px;
+  }
+}
+
+a[role='button'] {
+  text-decoration: none;
+  text-align: center;
+
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  letter-spacing: 0.5px;
 }

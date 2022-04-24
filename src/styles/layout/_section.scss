@@ -1,0 +1,11 @@
+.section {
+  margin-top: 9.375rem;
+  &__heading {
+  }
+
+  &__paragraph {
+    &--wide {
+      max-width: 45.625rem;
+    }
+  }
+}

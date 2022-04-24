@@ -1,4 +1,12 @@
-// -----------------------------------------------------------------------------
-// When having several themes, this file contains everything related to the
-// default one.
-// -----------------------------------------------------------------------------
+h1,
+h2 {
+  color: $color-dark-grayish-blue;
+}
+
+p {
+  color: $color-grayish-blue;
+}
+
+a[role='button'] {
+  color: $color-white;
+}
