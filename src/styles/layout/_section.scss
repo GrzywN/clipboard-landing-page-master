@@ -9,7 +9,22 @@
   padding-left: 2rem;
   padding-right: 2rem;
 
+  &__img {
+    &--devices {
+      margin-top: 4rem;
+
+      width: min(100%, 56.5625rem);
+      height: auto;
+    }
+  }
+
   @include media('>=large') {
     padding: 0;
+
+    &__img {
+      &--devices {
+        margin-top: 6.875rem;
+      }
+    }
   }
 }
