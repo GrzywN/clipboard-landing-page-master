@@ -1,0 +1,21 @@
+.introduction {
+  &__heading {
+  }
+
+  &__paragraph {
+    margin-top: 1rem;
+    &--wide {
+      max-width: 45.625rem;
+    }
+
+    &--supercharge {
+      margin-top: 0.6875rem; // mozliwe nadpisanie
+    }
+  }
+
+  @include media('>=large') {
+    &__paragraph {
+      margin-top: 1.1875rem;
+    }
+  }
+}
