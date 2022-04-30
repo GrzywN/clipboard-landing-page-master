@@ -1,0 +1,13 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3.5rem;
+
+  @include media('>=medium') {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.875rem;
+  }
+}
