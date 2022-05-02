@@ -1,4 +1,4 @@
 - Shadow do buttona
 - Heading class component
 - Super charge ma inny odstęp
-- Jesli grid i card bedzie slabo zrobiony (pixel-perfect) mozna sprobowac dac obrazki do bloku flex i wysrodkowac
+- Poprawić partners section

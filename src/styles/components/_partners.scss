@@ -1,0 +1,26 @@
+.partners {
+  width: 8.6875rem;
+  height: 27.4375rem;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  column-gap: 1rem;
+
+  &__logo {
+    width: 100%;
+    height: auto;
+  }
+
+  @include media('>small') {
+    width: min(69.375rem, 100%);
+    height: auto;
+
+    &__logo {
+      width: min-content;
+    }
+  }
+}
