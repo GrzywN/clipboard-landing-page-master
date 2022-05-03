@@ -9,27 +9,46 @@
   padding-left: 2rem;
   padding-right: 2rem;
 
-  &--supercharge {
-    margin-top: 10.0625rem;
-    gap: 4.5rem;
-  }
-
   &__img {
     &--devices {
-      margin-top: 4rem;
-
       width: min(100%, 56.5625rem);
       height: auto;
+
+      margin-top: 4rem;
+    }
+  }
+
+  &__button-wrapper {
+    display: grid;
+    gap: 1.5rem;
+
+    margin-top: 2.875rem;
+  }
+
+  &--supercharge {
+    gap: 4.5rem;
+
+    margin-top: 10.0625rem;
+  }
+
+  &--last {
+    margin-bottom: 9.375rem;
+  }
+
+  @include media('>=medium') {
+    &__button-wrapper {
+      display: flex;
+      gap: 1rem;
+
+      margin-top: 3rem;
     }
   }
 
   @include media('>=large') {
     padding: 0;
 
-    &__img {
-      &--devices {
-        margin-top: 6.875rem;
-      }
+    &__img--devices {
+      margin-top: 6.875rem;
     }
   }
 }
