@@ -15,7 +15,20 @@
     height: auto;
   }
 
-  @include media('>small') {
+  @include media('>small', '<medium') {
+    width: min(39rem, 75%);
+    height: auto;
+
+    row-gap: 2rem;
+
+    &__logo {
+      width: min-content;
+
+      flex: 1;
+    }
+  }
+
+  @include media('>=medium') {
     width: min(69.375rem, 100%);
     height: auto;
 
