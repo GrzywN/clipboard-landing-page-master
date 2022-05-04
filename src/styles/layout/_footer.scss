@@ -1,0 +1,91 @@
+.footer {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  &__logo {
+    width: 3.4375rem;
+    height: 3.4375rem;
+  }
+
+  &__links {
+    display: grid;
+    row-gap: 1.25rem;
+  }
+
+  &__socials {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__socials-item {
+    display: grid;
+    align-items: end;
+  }
+
+  &__socials-image {
+    width: 1.5rem;
+    height: auto;
+  }
+
+  @include media('<large') {
+    min-height: 31.25rem;
+
+    padding-top: 3.25rem;
+    padding-bottom: 3.1875rem;
+
+    &__container {
+      width: 10rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__links {
+      margin-top: 2.5rem;
+
+      text-align: center; // TODO: zmienic to zeby bylo jakos inaczej zrobione
+    }
+
+    &__socials {
+      margin-top: 3rem;
+    }
+  }
+
+  @include media('>=large') {
+    min-height: 9.375rem;
+
+    &__container {
+      width: min(69.375rem, 100%);
+
+      display: flex;
+      align-items: center;
+    }
+
+    &__links {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(3, 10rem);
+      grid-template-rows: repeat(2, 1.875rem);
+
+      row-gap: 0.75rem;
+      column-gap: 1.875rem;
+
+      margin-left: 8.4375rem;
+    }
+
+    &__socials {
+      width: 7.5rem;
+
+      margin-left: auto;
+    }
+
+    &__socials-item {
+      align-items: center;
+    }
+  }
+}
