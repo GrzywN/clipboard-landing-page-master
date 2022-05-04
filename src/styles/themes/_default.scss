@@ -14,4 +14,20 @@ a[role='button'] {
 
 footer a {
   color: $color-dark-grayish-blue;
+
+  &:hover {
+    color: $color-strong-cyan;
+  }
+}
+
+footer {
+  background-color: $color-grayish-blue;
+}
+
+footer path {
+  fill: $color-dark-grayish-blue;
+}
+
+footer a:hover path {
+  fill: $color-strong-cyan;
 }
