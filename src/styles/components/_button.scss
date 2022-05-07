@@ -20,13 +20,23 @@
   }
 
   &--ios {
-    background-color: $color-strong-cyan;
-    border-bottom-color: $color-strong-cyan-darker;
+    background-color: $color-ios-button-regular;
+    border-bottom-color: $color-ios-button-regular-shadow;
+
+    &:hover {
+      background-color: $color-ios-button-hover;
+      border-bottom-color: $color-ios-button-hover-shadow;
+    }
   }
 
   &--mac {
-    background-color: $color-light-blue;
-    border-bottom-color: $color-light-blue-darker;
+    background-color: $color-mac-button-regular;
+    border-bottom-color: $color-mac-button-regular-shadow;
+
+    &:hover {
+      background-color: $color-mac-button-hover;
+      border-bottom-color: $color-mac-button-hover-shadow;
+    }
   }
 
   @include media('>=medium') {

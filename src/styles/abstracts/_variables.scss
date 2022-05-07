@@ -1,11 +1,26 @@
 $font-bai-jamjuree: 'Bai Jamjuree', sans-serif;
 $font-sans-serif: $font-bai-jamjuree;
 
-$color-strong-cyan: hsl(171, 66%, 44%);
-$color-strong-cyan-darker: #1b8676;
-$color-light-blue: hsl(233, 100%, 69%);
-$color-light-blue-darker: #4553b7;
+$color-cyan-light: hsl(171, 39%, 53%);
+$color-cyan-lighter: hsl(171, 52%, 58%);
+$color-cyan-dark: hsl(171, 66%, 44%);
+$color-cyan-darker: hsl(171, 66%, 32%);
+
+$color-light-blue-light: hsl(233, 100%, 77%);
+$color-light-blue-lighter: hsl(233, 64%, 69%);
+$color-light-blue-dark: hsl(233, 100%, 69%);
+$color-light-blue-darker: hsl(233, 63%, 58%);
 $color-dark-grayish-blue: hsl(210, 10%, 33%);
 $color-grayish-blue: hsl(201, 11%, 66%);
 $color-almost-white: hsl(0, 0%, 95%);
 $color-white: hsl(0, 0%, 100%);
+
+$color-ios-button-regular: $color-cyan-dark;
+$color-ios-button-regular-shadow: $color-cyan-darker;
+$color-ios-button-hover: $color-cyan-lighter;
+$color-ios-button-hover-shadow: $color-cyan-light;
+
+$color-mac-button-regular: $color-light-blue-dark;
+$color-mac-button-regular-shadow: $color-light-blue-darker;
+$color-mac-button-hover: $color-light-blue-light;
+$color-mac-button-hover-shadow: $color-light-blue-lighter;

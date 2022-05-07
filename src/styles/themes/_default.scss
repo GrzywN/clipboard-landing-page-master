@@ -16,7 +16,7 @@ footer a {
   color: $color-dark-grayish-blue;
 
   &:hover {
-    color: $color-strong-cyan;
+    color: $color-cyan-dark;
   }
 }
 
@@ -29,5 +29,5 @@ footer path {
 }
 
 footer a:hover path {
-  fill: $color-strong-cyan;
+  fill: $color-cyan-dark;
 }
