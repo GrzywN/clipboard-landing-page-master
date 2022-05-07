@@ -20,6 +20,8 @@
   }
 
   &--ios {
+    box-shadow: 0 1.25rem 1.875rem -1.125rem $color-cyan-lighter;
+
     background-color: $color-ios-button-regular;
     border-bottom-color: $color-ios-button-regular-shadow;
 
@@ -30,6 +32,8 @@
   }
 
   &--mac {
+    box-shadow: 0 1.25rem 1.875rem -1.125rem $color-grayish-blue;
+
     background-color: $color-mac-button-regular;
     border-bottom-color: $color-mac-button-regular-shadow;
 
