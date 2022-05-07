@@ -12,8 +12,8 @@ body {
   min-height: 100vh;
 
   background-image: url(../images/bg-header-mobile.png);
-  background-attachment: fixed;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 
   display: flex;
   flex-direction: column;
