@@ -14,11 +14,13 @@
     margin-top: 3.5rem;
 
     display: grid;
-    gap: 4rem;
+    gap: 3rem;
   }
 
   &__paragraph {
     margin-top: 0.625rem;
+
+    text-align: center;
   }
 
   @include media('>=medium') {
@@ -46,6 +48,8 @@
 
     &__paragraph {
       margin-top: 0.5rem;
+
+      text-align: left; // sprawdzic jak wyglada
     }
   }
 }

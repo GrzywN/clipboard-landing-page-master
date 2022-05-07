@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
 
-  margin-top: 9.625rem;
+  margin-top: 10rem;
   padding-left: 2rem;
   padding-right: 2rem;
 
@@ -26,13 +26,13 @@
   }
 
   &--clipboard {
-    margin-top: 9.375rem;
+    margin-top: 11.625rem;
   }
 
   &--supercharge {
-    gap: 4.5rem;
+    gap: 5.625rem;
 
-    margin-top: 10.0625rem;
+    margin-top: 8.125rem;
   }
 
   &--partners {
@@ -40,7 +40,7 @@
   }
 
   &--last {
-    margin-bottom: 9.375rem;
+    margin-bottom: 10.625rem;
   }
 
   @include media('>=medium') {
@@ -51,12 +51,27 @@
       margin-top: 3rem;
     }
 
+    &--clipboard {
+      margin-top: 9.375rem;
+    }
+
+    &--supercharge {
+      gap: 4.5rem;
+
+      margin-top: 10.0625rem;
+    }
+
     &--partners {
       margin-top: 10rem;
+    }
+
+    &--last {
+      margin-bottom: 9.375rem;
     }
   }
 
   @include media('>=large') {
+    margin-top: 9.625rem;
     padding: 0;
 
     &__img--devices {

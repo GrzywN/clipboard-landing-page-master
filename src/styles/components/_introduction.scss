@@ -1,14 +1,13 @@
 .introduction {
-  // margin-top: -0.25rem;
-
   &__paragraph {
     margin-top: 1rem;
+
     &--wide {
       max-width: 45.625rem;
     }
 
     &--supercharge {
-      margin-top: 0.6875rem; // mozliwe nadpisanie
+      margin-top: 0.6875rem;
     }
   }
 

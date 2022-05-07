@@ -100,3 +100,11 @@ footer a {
   line-height: 1.875rem;
   letter-spacing: 0.14px;
 }
+
+.capitalize-on-small {
+  text-transform: capitalize;
+
+  @include media('>=large') {
+    text-transform: none;
+  }
+}

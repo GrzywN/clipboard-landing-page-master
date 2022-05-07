@@ -15,15 +15,10 @@
   }
 
   &__socials {
-    width: 100%;
+    width: calc(100% - 0.5rem);
 
     display: flex;
     justify-content: space-between;
-  }
-
-  &__socials-item {
-    display: grid;
-    align-items: end;
   }
 
   &__socials-image {
@@ -48,7 +43,7 @@
     &__links {
       margin-top: 2.5rem;
 
-      text-align: center; // TODO: zmienic to zeby bylo jakos inaczej zrobione
+      text-align: center;
     }
 
     &__socials {
@@ -85,6 +80,7 @@
     }
 
     &__socials-item {
+      display: grid;
       align-items: center;
     }
   }
