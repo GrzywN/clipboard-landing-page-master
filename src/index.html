@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="header">
-      <img src="images/logo.svg" alt="Clipboard logo" class="header__logo" />
+      <img class="header__logo" src="images/logo.svg" alt="Clipboard logo" />
       <h1 class="header__heading">A history of everything you copy</h1>
       <p class="header__paragraph text-center">
         Clipboard allows you to track and organize everything you copy. Instantly access your
@@ -32,12 +32,12 @@
       </div>
       <div class="illustration-section">
         <img
+          class="illustration-section__img"
           src="images/image-computer.png"
           alt="Apple desktop device"
-          class="illustration-section__img"
         />
         <div class="illustration-section__body">
-          <div class="">
+          <div class="illustration-section__container">
             <h3 class="illustration-section__heading">Quick Search</h3>
             <p class="illustration-section__paragraph">
               <small
@@ -46,13 +46,13 @@
               </small>
             </p>
           </div>
-          <div class="">
+          <div class="illustration-section__container">
             <h3 class="illustration-section__heading">iCloud Sync</h3>
             <p class="illustration-section__paragraph">
               <small> Instantly saves and syncs snippets across all your devices.</small>
             </p>
           </div>
-          <div class="">
+          <div class="illustration-section__container">
             <h3 class="illustration-section__heading">Complete History</h3>
             <p class="illustration-section__paragraph">
               <small>
@@ -72,9 +72,9 @@
         </p>
       </div>
       <img
+        class="section__img section__img--devices"
         src="images/image-devices.png"
         alt="Mobile devices"
-        class="section__img section__img--devices"
       />
     </section>
     <section class="section section--supercharge">
@@ -87,7 +87,7 @@
       <div class="grid">
         <div class="card">
           <div class="card__img-container">
-            <img src="images/icon-blacklist.svg" alt="Blacklist" class="card__img" />
+            <img class="card__img" src="images/icon-blacklist.svg" alt="Blacklist" />
           </div>
           <h3 class="card__heading">Create blacklists</h3>
           <p class="card__paragraph text-center">
@@ -99,7 +99,7 @@
         </div>
         <div class="card">
           <div class="card__img-container">
-            <img src="images/icon-text.svg" alt="Text" class="card__img" />
+            <img class="card__img" src="images/icon-text.svg" alt="Text" />
           </div>
           <h3 class="card__heading">Plain text snippets</h3>
           <p class="card__paragraph text-center">
@@ -108,7 +108,7 @@
         </div>
         <div class="card">
           <div class="card__img-container">
-            <img src="images/icon-preview.svg" alt="Preview" class="card__img" />
+            <img class="card__img" src="images/icon-preview.svg" alt="Preview" />
           </div>
           <h3 class="card__heading">Sneak preview</h3>
           <p class="card__paragraph text-center">
@@ -119,11 +119,11 @@
     </section>
     <div class="section">
       <div class="partners">
-        <img src="images/logo-google.png" alt="Google" class="partners__logo" />
-        <img src="images/logo-ibm.png" alt="IBM" class="partners__logo" />
-        <img src="images/logo-microsoft.png" alt="Microsoft" class="partners__logo" />
-        <img src="images/logo-hp.png" alt="Hewlett Packard Enterprise" class="partners__logo" />
-        <img src="images/logo-vector-graphics.png" alt="Vector Graphics" class="partners__logo" />
+        <img class="partners__logo" src="images/logo-google.png" alt="Google" />
+        <img class="partners__logo" src="images/logo-ibm.png" alt="IBM" />
+        <img class="partners__logo" src="images/logo-microsoft.png" alt="Microsoft" />
+        <img class="partners__logo" src="images/logo-hp.png" alt="Hewlett Packard Enterprise" />
+        <img class="partners__logo" src="images/logo-vector-graphics.png" alt="Vector Graphics" />
       </div>
     </div>
     <section class="section section--last">
@@ -135,23 +135,23 @@
         </p>
       </div>
       <div class="section__button-wrapper">
-        <a href="#" class="button button--ios" role="button" download>Download for iOS</a>
-        <a href="#" class="button button--mac" role="button" download>Download for Mac</a>
+        <a class="button button--ios" href="#" role="button" download>Download for iOS</a>
+        <a class="button button--mac" href="#" role="button" download>Download for Mac</a>
       </div>
     </section>
     <footer class="footer">
       <div class="footer__container">
-        <img src="images/logo.svg" alt="Clipboard logo" class="footer__logo" />
+        <img class="footer__logo" src="images/logo.svg" alt="Clipboard logo" />
         <ul class="footer__links">
-          <li class="footer__links-item"><a href="#" class="footer__link">FAQs</a></li>
-          <li class="footer__links-item"><a href="#" class="footer__link">Contact Us</a></li>
-          <li class="footer__links-item"><a href="#" class="footer__link">Privacy Policy</a></li>
-          <li class="footer__links-item"><a href="#" class="footer__link">Press Kit</a></li>
-          <li class="footer__links-item"><a href="#" class="footer__link">Install Guide </a></li>
+          <li class="footer__links-item"><a class="footer__link" href="#">FAQs</a></li>
+          <li class="footer__links-item"><a class="footer__link" href="#">Contact Us</a></li>
+          <li class="footer__links-item"><a class="footer__link" href="#">Privacy Policy</a></li>
+          <li class="footer__links-item"><a class="footer__link" href="#">Press Kit</a></li>
+          <li class="footer__links-item"><a class="footer__link" href="#">Install Guide </a></li>
         </ul>
         <ul class="footer__socials">
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link" aria-label="Facebook">
+            <a class="footer__socials-link" href="#" aria-label="Facebook">
               <svg
                 class="footer__socials-image"
                 width="24"
@@ -167,7 +167,7 @@
             </a>
           </li>
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link" aria-label="Twitter">
+            <a class="footer__socials-link" href="#" aria-label="Twitter">
               <svg
                 class="footer__socials-image"
                 width="24"
@@ -183,7 +183,7 @@
             </a>
           </li>
           <li class="footer__socials-item">
-            <a href="#" class="footer__socials-link" aria-label="Instagram">
+            <a class="footer__socials-link" href="#" aria-label="Instagram">
               <svg
                 class="footer__socials-image"
                 width="24"
