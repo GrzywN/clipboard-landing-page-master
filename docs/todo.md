@@ -1,6 +1,1 @@
-- Shadow do buttona
-- Heading class component
-- Super charge ma inny odstęp
-- Poprawić partners section
-- Zmienic kolor footera na pawidlowy i sprawdzic wszystkie kolory w footerze
-- sprawdzic kolejnosc footer
+<!-- - Poprawić partners section -->
