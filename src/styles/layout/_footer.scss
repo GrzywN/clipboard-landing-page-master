@@ -54,6 +54,10 @@
   @include media('>=large') {
     min-height: 9.375rem;
 
+    &__logo {
+      margin-bottom: 0.25rem;
+    }
+
     &__container {
       width: min(69.375rem, 100%);
 
