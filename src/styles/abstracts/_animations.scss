@@ -1,0 +1,7 @@
+$transition-default: 200ms ease;
+
+%transition {
+  transition: $transition-default;
+  transition-property: color, background-color, border-bottom-color, border-bottom-width, transform,
+    fill;
+}
