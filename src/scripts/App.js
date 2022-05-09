@@ -1,4 +1,4 @@
-import { GSAPAnimations } from './Animations.mjs';
+import { GSAPAnimations } from './modules/Animations.mjs';
 
 gsap.registerPlugin(ScrollTrigger);
 
