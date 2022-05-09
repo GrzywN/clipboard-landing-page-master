@@ -1,4 +1,4 @@
-import { GSAPAnimations } from './modules/Animations.mjs';
+import Animations from './modules/Animations.mjs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,6 +22,4 @@ const domElements = {
   sectionButtonWrapper: document.querySelector('.section__button-wrapper'),
 };
 
-const animations = new GSAPAnimations(domElements);
-
-animations.initializeAnimations();
+Animations.init(domElements);

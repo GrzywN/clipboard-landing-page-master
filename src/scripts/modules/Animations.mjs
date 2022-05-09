@@ -1,12 +1,34 @@
-import { GSAPAnimationSettings } from './AnimationSettings.mjs';
-import { GSAPTimeline } from './Timeline.mjs';
+import AnimationSettings from './AnimationSettings.mjs';
+import Timeline from './Timeline.mjs';
 
-export class Animations {
+export default class Animations {
   constructor(domElements) {
     this.domElements = domElements;
   }
 
-  initializeAnimations() {
+  static init(domElements) {
+    let animations;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    ScrollTrigger.matchMedia({
+      '(max-width: 56.25em)': () => {
+        animations = new AnimationsMobile(domElements);
+      },
+
+      '(min-width: 56.25em) and (max-width: 85.375em)': () => {
+        animations = new AnimationsTablet(domElements);
+      },
+
+      '(min-width: 85.375em)': () => {
+        animations = new AnimationsDesktop(domElements);
+      },
+
+      all: () => {
+        animations.animate();
+      },
+    });
+  }
+
+  animate() {
     this.animateHeader(this.domElements.headerIntroduction, this.domElements.headerButtonWrapper);
     this.animateIntroductions(this.domElements.introductions);
     this.animateImageColumnSection(
@@ -22,11 +44,7 @@ export class Animations {
   }
 }
 
-export class GSAPAnimations extends Animations {
-  constructor(domElements) {
-    super(domElements);
-  }
-
+class AnimationsMobile extends Animations {
   animateHeader(introductionElement, buttonWrapperElement) {
     if (introductionElement == null || buttonWrapperElement == null) return;
 
@@ -34,13 +52,13 @@ export class GSAPAnimations extends Animations {
     const leftButton = buttonWrapperElement.children[0];
     const rightButton = buttonWrapperElement.children[1];
 
-    const timeline = new GSAPTimeline();
+    const timeline = new Timeline();
     const LABEL = 'buttons';
 
     timeline.addAnimation({
       node: introduction,
       directionY: '-=',
-      stagger: GSAPAnimationSettings.stagger,
+      stagger: AnimationSettings.stagger,
     });
 
     timeline.addLabelToTimeline({ label: LABEL });
@@ -55,15 +73,15 @@ export class GSAPAnimations extends Animations {
     const introductions = introductionsElement;
 
     for (let i = 0; i < introductions.length - 1; i++) {
-      const timeline = new GSAPTimeline();
+      const timeline = new Timeline();
       timeline.addAnimation({
         node: introductions[i].children,
         directionY: '-=',
-        stagger: GSAPAnimationSettings.stagger,
+        stagger: AnimationSettings.stagger,
       });
       timeline.addScrollTrigger({
         trigger: introductions[i].parentNode,
-        start: GSAPAnimationSettings.start,
+        start: AnimationSettings.defaultStart,
       });
     }
   }
@@ -74,7 +92,7 @@ export class GSAPAnimations extends Animations {
     const image = imageElement;
     const cards = cardsElements;
 
-    const timeline = new GSAPTimeline();
+    const timeline = new Timeline();
 
     timeline.addAnimation({
       node: image,
@@ -82,13 +100,13 @@ export class GSAPAnimations extends Animations {
     });
     timeline.addAnimation({
       node: cards,
-      stagger: GSAPAnimationSettings.stagger,
+      stagger: AnimationSettings.stagger,
       directionX: '+=',
     });
 
     timeline.addScrollTrigger({
       trigger: image.parentNode,
-      start: GSAPAnimationSettings.start,
+      start: AnimationSettings.defaultStart,
     });
   }
 
@@ -97,10 +115,10 @@ export class GSAPAnimations extends Animations {
 
     const image = imageElement;
 
-    const timeline = new GSAPTimeline();
+    const timeline = new Timeline();
 
     timeline.addAnimation({ node: image, directionY: '+=' });
-    timeline.addScrollTrigger({ trigger: image, start: GSAPAnimationSettings.start });
+    timeline.addScrollTrigger({ trigger: image, start: AnimationSettings.higherStart });
   }
 
   animateGridCardsSection(cardsElements) {
@@ -112,19 +130,17 @@ export class GSAPAnimations extends Animations {
     const centerCard = cards[1];
     const rightCard = cards[2];
 
-    const timeline = new GSAPTimeline();
+    const timeline = new Timeline();
 
-    timeline.addLabelToTimeline({ label: 'outerCards' });
+    timeline.addAnimation({ node: leftCard, directionX: '-=' });
+    timeline.addAnimation({ node: centerCard, directionX: '+=' });
+    timeline.addAnimation({ node: rightCard, directionX: '-=' });
 
-    timeline.addAnimation({ node: leftCard, directionX: '-=', label: 'outerCards' });
-    timeline.addAnimation({ node: rightCard, directionX: '+=', label: 'outerCards' });
-    timeline.addAnimation({ node: centerCard, directionY: '+=' });
-
-    timeline.addScrollTrigger({ trigger: cards, start: GSAPAnimationSettings.start });
+    timeline.addScrollTrigger({ trigger: cards, start: AnimationSettings.higherStart });
   }
 
   animateButtonSection(introductionsElement, buttonWrapperElement) {
-    if (buttonWrapperElement == null) return;
+    if (introductionsElement == null || buttonWrapperElement == null) return;
 
     const introductions = introductionsElement;
     const introduction = introductions[introductions.length - 1];
@@ -133,7 +149,7 @@ export class GSAPAnimations extends Animations {
 
     const LABEL = 'buttons';
 
-    const timeline = new GSAPTimeline();
+    const timeline = new Timeline();
 
     timeline.addLabelToTimeline({ label: LABEL });
 
@@ -143,7 +159,51 @@ export class GSAPAnimations extends Animations {
 
     timeline.addScrollTrigger({
       trigger: buttonWrapperElement.parentNode,
-      start: GSAPAnimationSettings.higherStart,
+      start: AnimationSettings.higherStart,
     });
+  }
+}
+
+class AnimationsTablet extends AnimationsMobile {
+  animateGridCardsSection(cardsElements) {
+    if (cardsElements == null) return;
+
+    const cards = cardsElements;
+
+    const leftCard = cards[0];
+    const centerCard = cards[1];
+    const rightCard = cards[2];
+
+    const timeline = new Timeline();
+
+    timeline.addAnimation({ node: leftCard, directionX: '-=', label: 'outerCards' });
+    timeline.addAnimation({ node: centerCard, directionX: '+=' });
+    timeline.addAnimation({ node: rightCard, directionX: '-=', label: 'outerCards' });
+
+    timeline.addScrollTrigger({ trigger: cards, start: AnimationSettings.defaultStart });
+  }
+}
+
+class AnimationsDesktop extends AnimationsTablet {
+  animateGridCardsSection(cardsElements) {
+    if (cardsElements == null) return;
+
+    const cards = cardsElements;
+
+    const leftCard = cards[0];
+    const centerCard = cards[1];
+    const rightCard = cards[2];
+
+    const timeline = new Timeline();
+
+    const LABEL = 'outerCards';
+
+    timeline.addLabelToTimeline({ label: 'outerCards' });
+
+    timeline.addAnimation({ node: leftCard, directionX: '-=', label: LABEL });
+    timeline.addAnimation({ node: rightCard, directionX: '+=', label: LABEL });
+    timeline.addAnimation({ node: centerCard, directionY: '+=' });
+
+    timeline.addScrollTrigger({ trigger: cards, start: AnimationSettings.defaultStart });
   }
 }

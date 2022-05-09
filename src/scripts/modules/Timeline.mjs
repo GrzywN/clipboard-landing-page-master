@@ -1,10 +1,7 @@
-import { GSAPAnimationSettings } from './AnimationSettings.mjs';
+import AnimationSettings from './AnimationSettings.mjs';
 
-export class Timeline {}
-
-export class GSAPTimeline extends Timeline {
+export default class Timeline {
   constructor() {
-    super();
     this.timeline = gsap.timeline();
   }
 
@@ -14,17 +11,17 @@ export class GSAPTimeline extends Timeline {
     this.timeline.fromTo(
       node,
       {
-        x: `${directionX}${GSAPAnimationSettings.repositioning}`,
-        y: `${directionY}${GSAPAnimationSettings.repositioning}`,
+        x: `${directionX}${AnimationSettings.repositioning}`,
+        y: `${directionY}${AnimationSettings.repositioning}`,
         opacity: 0,
       },
       {
         x: 0,
         y: 0,
         opacity: 1,
-        duration: GSAPAnimationSettings.duration,
+        duration: AnimationSettings.duration,
         stagger: stagger,
-        ease: GSAPAnimationSettings.timingFunction,
+        ease: AnimationSettings.timingFunction,
       },
       label
     );
@@ -38,7 +35,7 @@ export class GSAPTimeline extends Timeline {
       trigger: trigger,
       start: start,
       toggleActions: 'play pause resume pause',
-      markers: GSAPAnimationSettings.markers,
+      markers: AnimationSettings.markers,
     });
   }
 
