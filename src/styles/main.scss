@@ -5,8 +5,8 @@
 
 @import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
 
-@import 'layout/header', 'layout/section', 'layout/footer';
+@import 'layout/header', 'layout/section', 'layout/_image-column-section', 'layout/grid',
+  'layout/footer';
 
-@import 'components/button', 'components/introduction', 'components/_image-column-section',
-  'components/grid', 'components/card', 'components/partners';
+@import 'components/button', 'components/introduction', 'components/card', 'components/partners';
 @import 'themes/default';
