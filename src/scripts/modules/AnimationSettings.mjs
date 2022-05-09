@@ -1,5 +1,5 @@
 export default class AnimationSettings {
-  static enabled = true;
+  static enabled = false;
   static repositioning = 100;
   static duration = 0.9;
   static timingFunction = 'ease';

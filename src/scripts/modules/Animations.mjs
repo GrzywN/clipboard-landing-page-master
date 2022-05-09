@@ -8,7 +8,8 @@ export default class Animations {
 
   static init(domElements) {
     let animations;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !AnimationSettings.enabled)
+      return;
     ScrollTrigger.matchMedia({
       '(max-width: 56.25em)': () => {
         animations = new AnimationsMobile(domElements);
