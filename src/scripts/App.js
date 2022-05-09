@@ -1,4 +1,4 @@
-import { GSAPAnimations } from './Animations.mjs';
+import { GSAPAnimations } from './modules/Animations.mjs';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,5 +25,3 @@ const domElements = {
 const animations = new GSAPAnimations(domElements);
 
 animations.initializeAnimations();
-
-// zmiana komponentow na layout
