@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-@import 'abstracts/variables', 'abstracts/functions', 'abstracts/mixins', 'abstracts/breakpoints',
-  'abstracts/animations';
+@import 'abstracts/variables', 'abstracts/breakpoints', 'abstracts/animations';
 
-@import 'base/base', 'base/fonts', 'base/typography', 'base/helpers';
+@import 'base/base', 'base/fonts', 'base/typography';
 
 @import 'layout/header', 'layout/section', 'layout/_image-column-section', 'layout/grid',
   'layout/footer';
