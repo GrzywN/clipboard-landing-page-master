@@ -18,7 +18,7 @@
   @include media('>small', '<medium') {
     display: flex;
     flex-flow: row wrap;
-
+    justify-content: center;
     column-gap: 1rem;
 
     width: min(39rem, 75%);
@@ -29,8 +29,6 @@
     &__logo {
       width: min-content;
       height: auto;
-
-      flex: 1;
     }
   }
 
