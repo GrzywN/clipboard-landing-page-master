@@ -21,3 +21,9 @@ body {
     background-image: url(../images/bg-header-desktop.png);
   }
 }
+
+@include media('>xlarge') {
+  html {
+    font-size: clamp(1rem, 1rem + 0.5vw, 2rem);
+  }
+}
