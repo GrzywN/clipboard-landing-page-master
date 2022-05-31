@@ -17,6 +17,8 @@ body {
   flex-direction: column;
   align-items: center;
 
+  overflow-x: hidden;
+
   @include media('>=large') {
     background-image: url(../images/bg-header-desktop.png);
   }
